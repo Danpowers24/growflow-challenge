@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  const challenge = require('../controllers/challengeController');
+  const customer = require('../controllers/challengeController');
 
   // Customer Routes
   app.route('/customer')
