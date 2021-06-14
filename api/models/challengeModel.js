@@ -10,7 +10,7 @@ const CustomerSchema = new Schema({
   },
   address: {
     type: String,
-    required: "enter date"
+    required: "enter address"
   },
   employid: {
     type: String,
@@ -18,4 +18,4 @@ const CustomerSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Customers', CustomerSchema);
+module.exports = mongoose.model('Customer', CustomerSchema);
