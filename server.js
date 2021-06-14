@@ -1,5 +1,12 @@
+// var express = require('express'),
+//   app = express(),
+//   port = process.env.PORT || 3000;
 
-const express = require('express'),
+// app.listen(port);
+
+// console.log('GrowFlow Challenge API server running on port:' + port);
+
+var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
@@ -8,7 +15,7 @@ const express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Pheonixdb'); 
+mongoose.connect('mongodb://localhost/Phoenixdb'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
