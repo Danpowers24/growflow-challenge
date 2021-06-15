@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CustomerSchema = new Schema({
+const EmployeeSchema = new Schema({
   name: {
     type: String,
     required: 'error: please enter name'
@@ -23,4 +23,4 @@ const CustomerSchema = new Schema({
     // required: "enter employee id"
 
 
-module.exports = mongoose.model('Customer', CustomerSchema);
+module.exports = mongoose.model('Employee', EmployeeSchema);

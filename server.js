@@ -2,7 +2,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  Customer = require('./api/models/challengeModel'); //created model loading here
+  Employee = require('./api/models/challengeModel'); //created model loading here
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
