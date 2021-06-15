@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const EmployeeSchema = new Schema({
+const CustomerSchema = new Schema({
   name: {
     type: String,
     required: 'error: please enter name'
