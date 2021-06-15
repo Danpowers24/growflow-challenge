@@ -46,3 +46,13 @@ exports.get_all = function(req, res) {
       res.json(customer);
     });
   };
+
+  exports.delete_a_customer = function(req, res) {
+   Customer.remove({_id: req.params.id}, function(err
+    // , customer
+    ) {
+      if (err)
+        res.send(err);
+      res.json({ message: 'Customer entry successfully deleted' });
+    });
+  };
