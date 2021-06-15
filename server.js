@@ -19,4 +19,4 @@ routes(app); //register the route
 app.listen(port);
 
 
-console.log('GrowFlow Challenge API server running on port:' + port);
+console.log('Phoenix (GrowFlow Challenge) API server running on port:' + port);
