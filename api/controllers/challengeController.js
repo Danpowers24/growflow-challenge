@@ -2,7 +2,10 @@
 
 const mongoose = require('mongoose'),
 
+
 Customer = mongoose.model('Customer');
+
+// CRUD actions on "Customer" entity
 
 exports.get_all = function(req, res) {
     Customer.find({}, function(err, customer) {
@@ -12,14 +15,12 @@ exports.get_all = function(req, res) {
     });
   };
 
-  // Add other CRUD actions below
-
   exports.create_a_customer = function(req, res) {
     var new_customer = new Customer(req.body);
-    new_customer.save(function(err, task) {
+    new_customer.save(function(err, customer) {
       if (err)
         res.send(err);
-      res.json(task);
+      res.json(customer);
     });
   };
   
@@ -56,3 +57,5 @@ exports.get_all = function(req, res) {
       res.json({ message: 'Customer entry successfully deleted' });
     });
   };
+
+  
