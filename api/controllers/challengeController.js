@@ -31,3 +31,18 @@ exports.get_all = function(req, res) {
         //   res.json(ret);
         // };
         
+  exports.get_a_customer = function(req, res) {
+    Customer.findById(req.params.id, function(err, customer) {
+      if (err)
+        res.send(err);
+      res.json(customer);
+    });
+  };
+
+  exports.update_a_customer = function(req, res) {
+    Customer.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, customer) {
+      if (err)
+        res.send(err);
+      res.json(customer);
+    });
+  };

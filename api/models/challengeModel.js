@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const CustomerSchema = new Schema({
   name: {
     type: String,
+    required: 'error: please enter name'
   },
   address: {
     type: String,
