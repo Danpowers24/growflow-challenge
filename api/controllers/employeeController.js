@@ -4,6 +4,7 @@ const mongoose = require('mongoose'),
 
 Employee = mongoose.model('Employee');
 
+// CRUD actions for "Employee" entity
 exports.get_all = function(req, res) {
     Employee.find({}, function(err, employee) {
       if (err)
@@ -12,25 +13,15 @@ exports.get_all = function(req, res) {
     });
   };
 
-  // Add other CRUD actions below
-
   exports.create_a_employee = function(req, res) {
     var new_employee = new Employee(req.body);
-    new_employee.save(function(err, task) {
+    new_employee.save(function(err, employee) {
       if (err)
         res.send(err);
-      res.json(task);
+      res.json(employee);
     });
   };
-  
-  // This is how an async/await version of the above POST call would look like
-  // I didn't go with this due to this challenge's simple MVP, and it is faster to test in Postman without waiting for the response
-        // exports.create_a_employee = async (req, res) => {
-        //   const new_employee = new Employee(req.body);
-        //   ret = await new_employee.save();
-        //   res.json(ret);
-        // };
-        
+
   exports.get_a_employee = function(req, res) {
     Employee.findById(req.params.id, function(err, employee) {
       if (err)

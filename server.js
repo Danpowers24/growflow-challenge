@@ -2,8 +2,9 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  Employee = require('./api/models/challengeModel'); //created model loading here
-  
+  Customer = require('./api/models/customerModel'); //created customer model loading here
+  Employee = require('./api/models/employeeModel'); //created employee model loading here
+
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/Phoenixdb', { useNewUrlParser: true, useUnifiedTopology: true }); 
