@@ -21,3 +21,29 @@ exports.get_all = function(req, res) {
       res.json(employee);
     });
   };
+
+  exports.get_a_employee = function(req, res) {
+    Employee.findById(req.params.id, function(err, employee) {
+      if (err)
+        res.send(err);
+      res.json(employee);
+    });
+  };
+
+  exports.update_a_employee = function(req, res) {
+    Employee.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, employee) {
+      if (err)
+        res.send(err);
+      res.json(employee);
+    });
+  };
+
+  exports.delete_a_employee = function(req, res) {
+   Employee.remove({_id: req.params.id}, function(err
+    // , employee
+    ) {
+      if (err)
+        res.send(err);
+      res.json({ message: 'Employee entry successfully deleted' });
+    });
+  };
