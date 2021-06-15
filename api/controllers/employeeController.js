@@ -2,11 +2,9 @@
 
 const mongoose = require('mongoose'),
 
+Employee = mongoose.model('Employee');
 
-Customer = mongoose.model('Customer');
-
-// CRUD actions on "Customer" entity
-
+// CRUD actions for "Employee" entity
 exports.get_all = function(req, res) {
     Employee.find({}, function(err, employee) {
       if (err)
@@ -15,23 +13,15 @@ exports.get_all = function(req, res) {
     });
   };
 
-  exports.create_a_customer = function(req, res) {
-    var new_customer = new Customer(req.body);
-    new_customer.save(function(err, customer) {
+  exports.create_a_employee = function(req, res) {
+    var new_employee = new Employee(req.body);
+    new_employee.save(function(err, employee) {
       if (err)
         res.send(err);
-      res.json(customer);
+      res.json(employee);
     });
   };
-  
-  // This is how an async/await version of the above POST call would look like
-  // I didn't go with this due to this challenge's simple MVP, and it is faster to test in Postman without waiting for the response
-        // exports.create_a_employee = async (req, res) => {
-        //   const new_employee = new Employee(req.body);
-        //   ret = await new_employee.save();
-        //   res.json(ret);
-        // };
-        
+
   exports.get_a_employee = function(req, res) {
     Employee.findById(req.params.id, function(err, employee) {
       if (err)
@@ -57,5 +47,3 @@ exports.get_all = function(req, res) {
       res.json({ message: 'Employee entry successfully deleted' });
     });
   };
-
-  
