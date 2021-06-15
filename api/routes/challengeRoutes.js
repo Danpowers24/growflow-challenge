@@ -6,9 +6,9 @@ module.exports = function(app) {
 
 
   // Customer Routes
-  app.route('/employee')
-    .get(employee.get_all)
-    .post(employee.create_a_employee);
+  app.route('/customer')
+    .get(customer.get_all)
+    .post(customer.create_a_customer);
 
   app.route('/customer/:id')
     .get(customer.get_a_customer)
