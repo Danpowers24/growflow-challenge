@@ -1,9 +1,21 @@
 'use strict';
 
 module.exports = function(app) {
-  const employee = require('../controllers/challengeController');
+  const customer = require('../controllers/challengeController');
+  const employee = require('../controllers/employeeController');
+
 
   // Customer Routes
+  app.route('/employee')
+    .get(employee.get_all)
+    .post(employee.create_a_employee);
+
+  app.route('/customer/:id')
+    .get(customer.get_a_customer)
+    .put(customer.update_a_customer)
+    .delete(customer.delete_a_customer);
+
+  // Employee Routes
   app.route('/employee')
     .get(employee.get_all)
     .post(employee.create_a_employee);
