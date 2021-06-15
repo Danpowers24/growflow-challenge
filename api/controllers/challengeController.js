@@ -23,3 +23,11 @@ exports.get_all = function(req, res) {
     });
   };
   
+  // This is how an async/await version of the above POST call would look like
+  // I didn't go with this due to this challenge's simple MVP, and it is faster to test in Postman without waiting for the response
+        // exports.create_a_customer = async (req, res) => {
+        //   const new_customer = new Customer(req.body);
+        //   ret = await new_customer.save();
+        //   res.json(ret);
+        // };
+        
