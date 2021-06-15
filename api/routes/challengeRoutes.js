@@ -9,8 +9,7 @@ module.exports = function(app) {
     .post(customer.create_a_customer);
 
   app.route('/customer/:id')
-  // // this will get dicey with all of the different names, id, customer_id, etc. 
     .get(customer.get_a_customer)
     .put(customer.update_a_customer)
-    // .delete(customer.delete_a_customer);
+    .delete(customer.delete_a_customer);
 };
